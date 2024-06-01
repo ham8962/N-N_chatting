@@ -53,7 +53,7 @@ public class ServerReceiver extends Thread {
             e.printStackTrace();
             System.out.println("[" + clientName + "Disconnected]");
             clientResisterManager.removeUser(clientName);
-            log.info("{}", clientResisterManager.getClientsMap());
+            log.info("{}", clientResisterManager.getClientsCopyMap());
         } finally {
             try {
                 socket.close();

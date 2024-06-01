@@ -47,16 +47,12 @@ public class ClientResisterManager {
         }
     }
 
-    public HashMap<String, UserManager> getClientsMap() {
+    public HashMap<String, UserManager> getClientsCopyMap() {
         L2.lock();
         try {
-            return this.clientsMap;
+            return new HashMap<>(this.clientsMap);
         } finally {
             L2.unlock();
         }
-    }
-
-    public void setClientsMap(HashMap<String, UserManager> clientsMap) {
-        this.clientsMap = clientsMap;
     }
 }
